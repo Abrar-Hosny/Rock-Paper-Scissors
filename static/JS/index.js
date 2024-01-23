@@ -3,6 +3,35 @@ let computerSelection ;
 let msg ;
 const CHOICES = ['rock' , 'paper' ,'scissors']
 
+
+document.addEventListener("DOMContentLoaded" , function(){
+    document.getElementById("popup-container").style.display="flex";
+
+})
+
+
+document.getElementById("close-popup").addEventListener("click", function() {
+    // Close the pop-up card when the "Start Playing" button is clicked
+    document.getElementById("popup-container").style.display = "none";
+    document.body.style.color='gray'
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 computerSelection=getComputerChoice() ;
 console.log("rock" , computerSelection)
 
@@ -15,7 +44,9 @@ function getComputerChoice(){
 
 } 
 
-function playRound (playerSelection ,computerSelection ){
+const selections = document.querySelectorAll('btn');
+
+selections.addEventListener('click' , (playerSelection ,computerSelection )=>{
 
     if((playerSelection=="paper" && computerSelection=="rock")){
         msg= "You Win 🐝 , Paper Beats Rock  "
@@ -77,4 +108,5 @@ return msg ;
 
 
 }
+)
 
