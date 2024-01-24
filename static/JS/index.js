@@ -3,10 +3,46 @@ let computerSelection ;
 let msg ;
 const CHOICES = ['rock' , 'paper' ,'scissors']
 
-computerSelection=getComputerChoice() ;
-console.log("rock" , computerSelection)
 
-console.log(playRound("rock" , computerSelection))
+// here when the Dom Content is loaded the pop up card will show up 
+
+document.addEventListener("DOMContentLoaded" , function(){
+    document.getElementById("default-modal").style.display="flex";
+
+})
+
+
+document.getElementById("yes").addEventListener("click", function() {
+    // when we click on  "Start Playing" button is clicked it will show nothing
+    document.getElementById("default-modal").style.display = "none";
+   document.body.style.backgroundColor='white'  ;
+});
+
+
+document.getElementById('no').addEventListener('click' , function(){
+    document.getElementById("default-modal").style.display = "none";
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+computerSelection=getComputerChoice() ;
 
 
 function getComputerChoice(){
@@ -15,7 +51,9 @@ function getComputerChoice(){
 
 } 
 
-function playRound (playerSelection ,computerSelection ){
+const selections = document.querySelectorAll('btn');
+
+selections.addEventListener('click' , (playerSelection ,computerSelection )=>{
 
     if((playerSelection=="paper" && computerSelection=="rock")){
         msg= "You Win 🐝 , Paper Beats Rock  "
@@ -77,4 +115,5 @@ return msg ;
 
 
 }
+)
 
