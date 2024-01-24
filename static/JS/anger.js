@@ -11,3 +11,11 @@ setTimeout(function() {
     document.getElementById("default-modal").style.display="flex";
     // You can replace the alert with code to display or modify an element on your page
 }, delayInMilliseconds);
+
+
+
+document.getElementById().addEventListener('click' , function(){
+    
+})
+
+
