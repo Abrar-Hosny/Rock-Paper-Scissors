@@ -4,17 +4,27 @@ let msg ;
 const CHOICES = ['rock' , 'paper' ,'scissors']
 
 
+// here when the Dom Content is loaded the pop up card will show up 
+
 document.addEventListener("DOMContentLoaded" , function(){
-    document.getElementById("popup-container").style.display="flex";
+    document.getElementById("default-modal").style.display="flex";
 
 })
 
 
-document.getElementById("close-popup").addEventListener("click", function() {
-    // Close the pop-up card when the "Start Playing" button is clicked
-    document.getElementById("popup-container").style.display = "none";
-    document.body.style.color='gray'
-  });
+document.getElementById("yes").addEventListener("click", function() {
+    // when we click on  "Start Playing" button is clicked it will show nothing
+    document.getElementById("default-modal").style.display = "none";
+   document.body.style.backgroundColor='white'  ;
+});
+
+
+document.getElementById('no').addEventListener('click' , function(){
+    document.getElementById("default-modal").style.display = "none";
+
+
+
+})
 
 
 
@@ -33,9 +43,6 @@ document.getElementById("close-popup").addEventListener("click", function() {
 
 
 computerSelection=getComputerChoice() ;
-console.log("rock" , computerSelection)
-
-console.log(playRound("rock" , computerSelection))
 
 
 function getComputerChoice(){
